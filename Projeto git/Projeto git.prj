@@ -6,11 +6,12 @@
    <UUID>302c294f-c7c6-4484-8aa8-84c67a859ae6</UUID>
    <createdEdition>FREE</createdEdition>
    <createdVersion>10.1.0</createdVersion>
-   <freeLicense>false</freeLicense>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>FREE</modifiedEdition>
    <modifiedVersion>10.1.0</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\Thefork\projetfinal\Projeto git\Projeto git.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

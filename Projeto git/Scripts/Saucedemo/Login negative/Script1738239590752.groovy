@@ -21,9 +21,11 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.saucedemo.com/')
 
-WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_user-name'), 'visual_user')
+WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_user-name (1)'), 'errpr')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_password'), 'qcu24s4901FyWDTwXGr6XA==')
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_login-button (1)'))
 
-WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_login-button'))
+WebUI.verifyElementText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/h3_Epic sadface Password is required'), 'Epic sadface: Password is required')
+
+WebUI.closeBrowser()
 

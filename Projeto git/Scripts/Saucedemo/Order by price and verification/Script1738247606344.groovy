@@ -17,13 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Saucedemo/Login positive'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl('https://www.saucedemo.com/')
+WebUI.selectOptionByValue(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/select_Name (A to Z)Name (Z to A)Price (low_f7e90a'), 
+    'lohi', true)
 
-WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_user-name'), 'visual_user')
+WebUI.closeBrowser()
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_password'), 'qcu24s4901FyWDTwXGr6XA==')
-
-WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_login-button'))
-
+// 1️⃣ Login na aplicação
+WebUI.callTestCase(findTestCase('saucedemo/Login com sucesso'), [:], FailureHandling.STOP_ON_FAILURE)
+ 
+// 2️⃣ Ordenar os itens do maior para o menor preço
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/span_Name (A to Z)Name (A to Z)Name (Z to A_3f2346'))
+WebUI.selectOptionByValue(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/select_Name (A to Z)Name (Z to A)Price (low_f7e90a'), 'hilo', true)
+ 
+// 3️⃣ Capturar os preços dos produtos na lista
+List<WebElement> precos = WebUI.findWebElements(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/div_49.99'), 10)
+ 
+// 4️⃣ Converter os preços para números
+List<Double> valores = precos.collect { it.getText().replaceAll('[^0-9.]', '').toDouble() }
+ 
+// 5️⃣ Validar que o primeiro item tem o maior preço
+boolean maiorNoTopo = valores[0] == valores.max()
+WebUI.verifyEqual(maiorNoTopo, true)

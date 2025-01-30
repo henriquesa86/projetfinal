@@ -21,9 +21,31 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.saucedemo.com/')
 
-WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_user-name'), 'visual_user')
+WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_user-name'), 'standard_user')
 
 WebUI.setEncryptedText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_password'), 'qcu24s4901FyWDTwXGr6XA==')
 
 WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Swag Labs_login-button'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/button_Add to cart'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/button_Add to cart_1'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/a_2'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/button_Checkout'))
+
+WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Checkout Your Information_firstName'), 'Alberto')
+
+WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Checkout Your Information_lastName'), 'Mirandela')
+
+WebUI.setText(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Checkout Your Information_postalCode'), '1402-021')
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/input_Cancel_continue'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/button_Finish'))
+
+WebUI.click(findTestObject('Object Repository/Saucedemo/Page_Swag Labs/button_Back Home'))
+
+WebUI.closeBrowser()
 
